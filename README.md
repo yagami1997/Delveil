@@ -1,7 +1,7 @@
 # 🔮 Delveil: Advanced Cryptographic Relay Implementation
 
 > *"In the digital realm, the path matters more than the destination."*
-> Reference Implementation: `https://kyoto.jp.eu.org`
+
 
 ---
 
@@ -144,9 +144,5 @@ Delveil draws from several disciplines in its implementation:
 
 *Delveil is an open implementation for academic and research purposes. The developers assume no responsibility for implementation choices in production environments.*
 
-```
-# Reference Access Pattern
-https://kyoto.jp.eu.org/encinitas?code=abc123
-```
 
 ---
