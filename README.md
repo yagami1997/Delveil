@@ -1,4 +1,4 @@
-# 🔮 Delveil: Advanced Cryptographic Relay Implementation
+# 🔮 Delveil: Privacy-Preserving Link Relay Framework
 
 > *"In the digital realm, the path matters more than the destination."*
 
@@ -7,7 +7,7 @@
 
 ## 🧿 Introduction
 
-**Delveil** is a lightweight cryptographic relay framework designed for secure content transmission research. It functions as a privacy-preserving middleware that obscures source origins while maintaining data integrity. This implementation allows for the generation of ephemeral access points to digital assets without exposing the underlying storage infrastructure.
+**Delveil** is a lightweight cryptographic relay framework designed for secure content transmission. It functions as a privacy-preserving middleware that obscures source origins while maintaining data integrity. This implementation allows for the generation of ephemeral access points to network storage assets without exposing the underlying repository infrastructure.
 
 ## 🧩 Architectural Philosophy
 
@@ -30,19 +30,17 @@ The project adopts principles from the **California coastal information flow par
 
 ```
 delveil/
-├── main.py                    # FastAPI implementation core
-├── parser/
-│   └── protocol_handlers.py   # Protocol-specific interpreters
-├── storage/
-│   └── config.json            # Relay configuration mapping
-├── utils/
-│   └── stream.py              # Streaming relay processor
+├── main.py                # FastAPI implementation core
+├── parsers.py             # Protocol-specific interpreters
+├── config.json            # Relay configuration mapping
+├── utils.py               # Utility functions including stream processing
 ├── templates/
-│   └── access_interface.html  # User interface templates
+│   └── download.html      # User interface template
 ├── static/
-│   └── delveil.css            # California-inspired styling
-├── requirements.txt
-└── README.md
+│   ├── style.css          # California-inspired styling
+│   └── script.js          # Client-side functionality
+├── requirements.txt       # Dependency specifications
+└── README.md              # Implementation documentation
 ```
 
 ## 🎭 Endpoint Masking Strategy
@@ -50,26 +48,24 @@ delveil/
 | Virtual Path | Function |
 |--------------|----------|
 | `/delmar` | Content relay initialization interface |
-| `/encinitas` | Ephemeral access interface |
+| `/encinitas/:code` | Ephemeral access interface |
 | `/lajolla1295.html` | Administrative controls (location-obscured) |
-| `/carmel`, `/sanclemente` | Auxiliary generation endpoints |
 
 ## 🧪 Supported Protocols
 
 The modular framework currently supports the following source protocols:
 
 ### ✅ Implemented:
-- **Protocol K** (Fully operational)
+- **KOD Protocol** (Fully operational)
   - Single asset relay
   - Directory structure mapping
 
 ### 🧪 Research Pipeline:
-- Protocol C (Open specification)
-- Protocol N (Self-hosted environments)
-- Protocols Z, F (Limited access repositories)
+- Cloudreve Protocol (Open specification)
+- Nextcloud Protocol (Self-hosted environments)
 
 ### ⚠️ Incompatible (Due to client-side validation requirements):
-- Commercial repositories with proprietary authentication mechanisms
+- Commercial repositories (Baidu, Alibaba Cloud, Tencent) with proprietary authentication mechanisms
 
 ## 🔏 Security Implementation
 
@@ -88,9 +84,9 @@ The security model implements several cryptographic and information theory princ
 ```json
 {
   "abc123": {
-    "protocol": "k",
-    "source": "https://[redacted]/#s/_Z9NwP-Q",
-    "key": "y1VXy",
+    "platform": "kod",
+    "share_url": "https://[redacted]/#s/_Z9NwP-Q",
+    "password": "y1VXy",
     "type": "file",
     "max_views": 3,
     "expire_at": 1737235200
@@ -106,8 +102,28 @@ The reference implementation utilizes:
 2. Python 3.11+ runtime environment
 3. FastAPI for asynchronous request handling
 4. Playwright for protocol simulation
-5. Reverse proxy configuration for network isolation
-6. Dedicated domain with TLS implementation
+5. Systemd for service management and automatic startup
+6. Reverse proxy configuration with TLS implementation
+
+### Systemd Service Integration
+
+The implementation employs systemd for service lifecycle management:
+
+```ini
+[Unit]
+Description=Delveil Privacy Link Service
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/path/to/delveil
+ExecStart=/usr/bin/python3 -m uvicorn main:app --host 127.0.0.1 --port 8000
+Restart=always
+Environment="PLAYWRIGHT_BROWSERS_PATH=/path/to/playwright/browsers"
+
+[Install]
+WantedBy=multi-user.target
+```
 
 ## 🔬 Research Applications
 
@@ -123,11 +139,11 @@ This implementation has potential applications in:
 
 The project roadmap explores several theoretical extensions:
 
-- **Quantum-resistant endpoint generation**: Implementing post-quantum cryptographic techniques
-- **Zero-knowledge access protocols**: Further reducing information leakage
-- **Multi-hop relay chains**: Creating cascading access pathways
-- **CLI implementation**: Programmatic relay generation
-- **Ephemeral one-time access**: Single-use cryptographic endpoints
+- **One-time access mechanisms**: Single-use cryptographic endpoints
+- **Multi-platform protocol support**: Expanding supported repositories
+- **Enhanced user interface**: Improving the access experience
+- **Administrative dashboard**: Centralized relay management
+- **Mobile optimization**: Responsive design for varied device access
 
 ---
 
@@ -143,6 +159,5 @@ Delveil draws from several disciplines in its implementation:
 ---
 
 *Delveil is an open implementation for academic and research purposes. The developers assume no responsibility for implementation choices in production environments.*
-
 
 ---
