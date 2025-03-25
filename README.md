@@ -2,7 +2,6 @@
 
 > *"In the digital realm, the path matters more than the destination."*
 
-
 ---
 
 ## 🧿 Introduction
@@ -35,10 +34,14 @@ delveil/
 ├── config.json            # Relay configuration mapping
 ├── utils.py               # Utility functions including stream processing
 ├── templates/
-│   └── download.html      # User interface template
+│   ├── delmar.html        # Link generation interface
+│   ├── encinitas.html     # File access interface
+│   └── lajolla.html       # Administrative control panel
 ├── static/
-│   ├── style.css          # California-inspired styling
-│   └── script.js          # Client-side functionality
+│   ├── css/
+│   │   └── style.css      # California-inspired styling
+│   └── js/
+│       └── script.js      # Client-side functionality
 ├── requirements.txt       # Dependency specifications
 └── README.md              # Implementation documentation
 ```
@@ -135,15 +138,61 @@ This implementation has potential applications in:
 - Temporary access provisioning without persistent trails
 - Cross-repository content aggregation without revealing sources
 
-## 🧭 Future Research Directions
+## 🧭 Development Timeline
 
-The project roadmap explores several theoretical extensions:
+### Phase 1: Core Infrastructure (1-2 weeks)
+- FastAPI framework implementation
+- KOD protocol parser development
+- Stream relay processing
+- Base template preparation
 
-- **One-time access mechanisms**: Single-use cryptographic endpoints
-- **Multi-platform protocol support**: Expanding supported repositories
-- **Enhanced user interface**: Improving the access experience
-- **Administrative dashboard**: Centralized relay management
-- **Mobile optimization**: Responsive design for varied device access
+### Phase 2: Feature Enhancement (3-4 weeks)
+- Directory listing functionality
+- Access control and expiration implementation
+- UI design refinement
+- Del Mar interface development
+
+### Phase 3: Deployment & Testing (Week 5)
+- Deployment documentation
+- Security assessment
+- Resource optimization
+- Production testing
+- Systemd service configuration
+
+## 📋 Feature Matrix
+
+| Feature | Status | Description |
+|---------|--------|-------------|
+| KOD Single File Relay | ✅ | Direct file link extraction and relay |
+| KOD Directory Relay | ✅ | Directory structure navigation and access |
+| Origin Domain Concealment | ✅ | Backend stream proxying |
+| Configuration Management | ✅ | code → link/password/type mapping |
+| Del Mar Generation Interface | ✅ | Link creation portal |
+| Encinitas Access Interface | ✅ | Download interface with countdown |
+| La Jolla Control Panel | ✅ | Hidden administration path |
+| Deployment Integration | ✅ | Systemd and reverse proxy configuration |
+| Playwright Simulation | ✅ | Automated authentication and extraction |
+| Multi-platform Protocol Support | 🔜 | Planned extension to additional repositories |
+| One-time Access Mechanism | 🔜 | Single-use link functionality |
+| Commercial Repository Support | ❌ | Not compatible due to validation requirements |
+
+## 🚀 Implementation Challenges
+
+### 1. Browser Simulation Resource Management
+- On-demand instance creation rather than persistent browser
+- Appropriate timeout configuration to prevent resource starvation
+
+### 2. Stream Processing
+- Flow-through processing without complete file buffering
+- Header preservation for seamless content type handling
+
+### 3. Security Considerations
+- Unpredictable code generation
+- View limitation and expiration mechanisms
+
+### 4. Service Management
+- Systemd configuration for stability and automatic restart
+- Environment variable configuration for browser path management
 
 ---
 

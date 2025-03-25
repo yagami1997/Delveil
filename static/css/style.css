@@ -1,0 +1,10 @@
+/* Delveil 基础样式 */
+:root {
+  --main-color: #12648F;     /* 深蓝，代表 Del Mar 海岸 */
+  --btn-color: #A42423;      /* 深红，强调安全与警觉 */
+  --bg-color: #EDDDAF;       /* 柔黄，阳光沙滩背景 */
+  --text-dark: #333333;      /* 文本主色 */
+  --text-light: #FFFFFF;     /* 浅色文本 */
+}
+
+/* CSS样式将在这里实现 */
